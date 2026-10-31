@@ -30,7 +30,7 @@ PCL CE 是基于 PCL 开源代码二次开发的社区版本，包括了主线�
 
 社区版的版本号与主线并非严格对应关系，也请不要向官方仓库反馈社区版问题。
 
-欢迎大家来用用看！
+欢迎大家来用用看！---以下是原PCL CE社区内容
 
 **开发群:** [599620549](https://qm.qq.com/q/PNQA4Md8wc)[✦](https://t.me/+78XW2bUOvKJjMTZl) | **用户 1 群:** [1028074835](https://qm.qq.com/q/qrMGJo8BQQ) | **用户 2 群:** [1070029541](https://qm.qq.com/q/lBywbDMWhG)
 
