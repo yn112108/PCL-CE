@@ -16,8 +16,7 @@ public class PageToolsLeftViewModel : ViewModelBase
     public FormMain.PageSubType ResolveInitialPageId()
     {
         var hide = Config.Preference.Hide;
-        if (!hide.ToolsGameLink) return FormMain.PageSubType.ToolsGameLink;
         if (!hide.ToolsTest) return FormMain.PageSubType.ToolsTest;
-        return FormMain.PageSubType.ToolsGameLink;
+        return FormMain.PageSubType.ToolsTest;
     }
 }
