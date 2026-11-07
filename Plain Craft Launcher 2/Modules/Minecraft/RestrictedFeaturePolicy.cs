@@ -1,33 +1,16 @@
-using PCL.Core.App.Localization;
-using PCL.Core.UI.Hints;
-using PCL.Core.App.Region;
-
 namespace PCL;
 
+/// <summary>
+/// Compatibility shim for disabled region-based restrictions. Downloads and installations are not
+/// restricted according to the user's location.
+/// </summary>
 internal static class RestrictedFeaturePolicy
 {
-    internal static RegionAssessment Assess() => RegionPolicy.Evaluate(RegionPolicy.ReadWindowsSignals());
+    internal static bool IsRestricted => false;
 
-    internal static bool IsRestricted => Assess().IsRestricted;
-
-    internal static bool Check(string feature, bool showHint = true)
-    {
-        var assessment = Assess();
-        if (!assessment.IsRestricted) return true;
-
-        Common.Log($"[RegionPolicy] 已阻止功能 {feature}，判定原因：{assessment.Reason}");
-        if (showHint)
-        {
-            HintService.Show(Hints.Error(Lang.Text(assessment.Classification == RegionClassification.Unknown
-                ? "Region.Feature.Unknown"
-                : "Region.Feature.Restricted")));
-        }
-        return false;
-    }
+    internal static bool Check(string feature, bool showHint = true) => true;
 
     internal static void ThrowIfRestricted(string feature)
     {
-        if (Check(feature, false)) return;
-        throw new Common.CancelledException();
     }
 }
